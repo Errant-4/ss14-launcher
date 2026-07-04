@@ -67,7 +67,7 @@ public static class HappyEyeballsHttp
         // I could find no other robust way to check "is there a chance in hell IPv6 works" other than "try it",
         // so... try it we will.
         var endPoint = context.DnsEndPoint;
-        Log.Verbose("Seeking connection to {EndPoint}", endPoint);
+        Log.Information("Seeking connection to {EndPoint}", endPoint);
 
         var resolvedAddresses = await GetIpsForHost(endPoint, cancellationToken).ConfigureAwait(false);
         if (resolvedAddresses.Length == 0)
